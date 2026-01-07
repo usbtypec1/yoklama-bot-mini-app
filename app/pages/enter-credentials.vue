@@ -158,7 +158,7 @@ const process = async () => {
   state.value = 'loading'
 
   impactOccurred?.("light");
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  await new Promise(resolve => setTimeout(resolve, 1000));
 
   try {
     const responseData = await $fetch('/api/verify', {
@@ -171,7 +171,7 @@ const process = async () => {
     fullName.value = responseData.fullName
     state.value = 'success'
 
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise(resolve => setTimeout(resolve, 5000));
     sendData?.(JSON.stringify({ studentNumber: studentNumber.value, password: password.value }));
     notificationOccurred?.("success");
   } catch (error: any) {
