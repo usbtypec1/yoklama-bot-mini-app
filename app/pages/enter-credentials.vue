@@ -69,13 +69,6 @@
             </div>
 
             <MainButton @click="onSubmit" :visible="state === 'form'" text="Подтвердить"/>
-
-            <button
-                @click="onSubmit"
-                class="w-full bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold py-3 rounded-lg transition transform hover:scale-105"
-            >
-              Подтвердить
-            </button>
           </div>
 
           <!-- LOADING -->
