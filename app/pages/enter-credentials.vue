@@ -9,8 +9,8 @@
         <div :key="state" class="relative min-h-[400px]">
 
           <!-- FORM -->
-          <div v-if="state === 'form'" class="absolute inset-0">
-            <div class="text-center mb-4">
+          <div v-if="state === 'form'" class="absolute inset-0 flex flex-col justify-center">
+            <div class="text-center mb-8">
               <h1 class="text-3xl font-bold text-gray-800 mb-2">
                 Вход в Yoklama Bot
               </h1>
@@ -61,7 +61,6 @@
               </label>
               <input
                   v-model="password"
-                  type="password"
                   class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
                   placeholder="yes_future123!"
                   @keyup.enter="onSubmit"
@@ -129,9 +128,11 @@
 </template>
 
 <script setup lang="ts">
-import { MainButton, useMiniApp } from "vue-tg";
+import { MainButton, usePopup, useMiniApp, useHapticFeedback } from "vue-tg";
 
+const { showPopup } = usePopup()
 const { sendData } = useMiniApp()
+const { notificationOccurred, impactOccurred } = useHapticFeedback()
 
 const state = ref<'form' | 'loading' | 'success'>('form')
 const studentNumber = ref<string>('')
@@ -139,10 +140,10 @@ const password = ref<string>('')
 const errorMessage = ref<string>('')
 const fullName = ref<string>('')
 
-const onSubmit = async () => {
-  errorMessage.value = ''
-  state.value = 'loading'
+const isTermsAccepted = useState('termsAccepted', () => false);
 
+const process = async () => {
+  impactOccurred?.("light");
   await new Promise(resolve => setTimeout(resolve, 2000));
 
   try {
@@ -158,11 +159,52 @@ const onSubmit = async () => {
 
     await new Promise(resolve => setTimeout(resolve, 3000));
     sendData?.(JSON.stringify({ studentNumber: studentNumber.value, password: password.value }));
+    notificationOccurred?.("success");
   } catch (error: any) {
     errorMessage.value =
         error?.data?.message || 'Неверно введенные данные.'
     state.value = 'form'
+    notificationOccurred?.("error");
   }
+}
+
+const onSubmit = () => {
+  errorMessage.value = ''
+  state.value = 'loading'
+
+  if (isTermsAccepted.value) {
+    process();
+    return;
+  }
+
+  showPopup?.({
+    title: "Внимание!",
+    message: "Используя данный сервис, вы соглашаетесь с пользовательским соглашением.",
+    buttons: [
+      {
+        text: "Ознакомиться",
+        id: "view_terms",
+      },
+      {
+        text: "Согласен",
+        id: "accept",
+        type: "default",
+      },
+      {
+        type: "cancel",
+      }
+    ],
+  }, async (id: string) => {
+    if (id === 'accept') {
+      await process();
+    } else if (id === 'view_terms') {
+      await navigateTo("terms");
+    } else {
+      isTermsAccepted.value = true;
+      state.value = 'form'
+    }
+  })
+
 }
 </script>
 
