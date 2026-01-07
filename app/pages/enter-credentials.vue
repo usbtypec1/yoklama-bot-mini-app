@@ -130,17 +130,28 @@
 <script setup lang="ts">
 import { MainButton, usePopup, useMiniApp, useHapticFeedback } from "vue-tg";
 
-const { showPopup } = usePopup()
-const { sendData } = useMiniApp()
-const { notificationOccurred, impactOccurred } = useHapticFeedback()
+const { showPopup } = usePopup();
+const { sendData } = useMiniApp();
+const { notificationOccurred, impactOccurred } = useHapticFeedback();
 
-const state = ref<'form' | 'loading' | 'success'>('form')
-const studentNumber = ref<string>('')
-const password = ref<string>('')
-const errorMessage = ref<string>('')
-const fullName = ref<string>('')
+const state = ref<'form' | 'loading' | 'success'>('form');
+const studentNumber = ref<string>('');
+const password = ref<string>('');
+const errorMessage = ref<string>('');
+const fullName = ref<string>('');
 
+const storedStudentNumber = useState('studentNumber', () => '');
+const storedPassword = useState('password', () => '');
 const isTermsAccepted = useState('termsAccepted', () => false);
+
+onMounted(() => {
+  if (storedStudentNumber.value.length > 0) {
+    studentNumber.value = storedStudentNumber.value;
+  }
+  if (storedPassword.value.length > 0) {
+    password.value = storedPassword.value;
+  }
+});
 
 const process = async () => {
   errorMessage.value = ''
@@ -199,6 +210,8 @@ const onSubmit = () => {
       isTermsAccepted.value = true;
       await process();
     } else if (id === 'view_terms') {
+      storedStudentNumber.value = studentNumber.value;
+      storedPassword.value = password.value;
       await navigateTo("terms");
     }
   })
