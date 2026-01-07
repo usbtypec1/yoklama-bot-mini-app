@@ -3,7 +3,7 @@
       class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-start justify-center p-4"
   >
     <div
-        class="bg-white rounded-2xl shadow-2xl p-4 w-full max-w-md overflow-hidden"
+        class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md overflow-hidden"
     >
       <Transition name="fade-slide" mode="out-in">
         <div :key="state" class="relative min-h-[400px]">
