@@ -196,12 +196,10 @@ const onSubmit = () => {
     ],
   }, async (id: string) => {
     if (id === 'accept') {
+      isTermsAccepted.value = true;
       await process();
     } else if (id === 'view_terms') {
       await navigateTo("terms");
-    } else {
-      isTermsAccepted.value = true;
-      state.value = 'form'
     }
   })
 
