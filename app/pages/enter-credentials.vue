@@ -20,7 +20,7 @@
             <!-- Error -->
             <div
                 v-if="errorMessage"
-                class="mb-2 p-4 bg-red-50 border tg-destructive-outline-color rounded-lg animate-shake"
+                class="mb-2 py-4 tg-destructive-outline-color rounded-lg animate-shake"
             >
               <div class="flex items-center">
                 <svg
