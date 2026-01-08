@@ -20,11 +20,11 @@
             <!-- Error -->
             <div
                 v-if="errorMessage"
-                class="mb-2 p-4 bg-red-50 border border-red-200 rounded-lg animate-shake"
+                class="mb-2 p-4 bg-red-50 border destructive-outline-color rounded-lg animate-shake"
             >
               <div class="flex items-center">
                 <svg
-                    class="w-5 h-5 text-red-500 mr-2"
+                    class="w-5 h-5 destructive-text-color mr-2"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                 >
@@ -34,7 +34,7 @@
                       clip-rule="evenodd"
                   />
                 </svg>
-                <span class="text-red-700 text-sm">
+                <span class="destructive-text-color text-sm">
                   {{ errorMessage }}
                 </span>
               </div>
@@ -48,7 +48,7 @@
               <input
                   v-model="studentNumber"
                   type="text"
-                  class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                  class="w-full px-4 py-3 border rounded-lg accent-outline-color"
                   placeholder="2204.01001"
                   @keyup.enter="onSubmit"
               />
@@ -61,7 +61,7 @@
               </label>
               <input
                   v-model="password"
-                  class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+                  class="w-full px-4 py-3 border rounded-lg accent-outline-color"
                   placeholder="yes_future123!"
                   @keyup.enter="onSubmit"
               />
@@ -83,7 +83,7 @@
                   class="w-20 h-20 border-8 border-purple-500 rounded-full animate-spin border-t-transparent absolute inset-0"
               ></div>
             </div>
-            <p class="mt-6 text-gray-600 font-medium">
+            <p class="mt-6 text-color font-medium">
               Проверка введенных данных...
             </p>
           </div>
@@ -111,12 +111,12 @@
               </svg>
             </div>
 
-            <h2 class="mt-6 text-2xl font-bold text-center text-gray-800">
+            <h2 class="mt-6 text-2xl font-bold text-center text-color">
               Добро пожаловать!
               <br>
               {{ fullName }}
             </h2>
-            <p class="mt-2 text-gray-600 text-center">
+            <p class="mt-2 subtitle-text-color text-center">
               Через пару секунд вы автоматически будете перенаправлены в бота.
             </p>
           </div>
@@ -299,5 +299,17 @@ const onSubmit = () => {
 
 .secondary-bg-color {
   background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.accent-outline-color {
+  border-color: var(--tg-theme-accent-text-color);
+}
+
+.destructive-text-color {
+  color: var(--tg-theme-destructive-text-color);
+}
+
+.destructive-outline-color {
+  border-color: var(--tg-theme-destructive-text-color);
 }
 </style>
