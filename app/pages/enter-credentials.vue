@@ -77,10 +77,10 @@
           >
             <div class="relative">
               <div
-                  class="w-20 h-20 border-8 border-purple-200 rounded-full"
+                  class="w-20 h-20 border-8 tg-loading-indicator-secondary-color rounded-full"
               ></div>
               <div
-                  class="w-20 h-20 border-8 border-purple-500 rounded-full animate-spin border-t-transparent absolute inset-0"
+                  class="w-20 h-20 border-8 tg-loading-indicator-primary-color rounded-full animate-spin border-t-transparent absolute inset-0"
               ></div>
             </div>
             <p class="mt-6 tg-text-color font-medium">

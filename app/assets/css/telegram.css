@@ -38,3 +38,11 @@
 .tg-accent-text-color {
     color: var(--tg-theme-accent-text-color);
 }
+
+.tg-loading-indicator-primary-color {
+    border-color: var(--tg-theme-button-color);
+}
+
+.tg-loading-indicator-secondary-color {
+    border-color: var(--tg-theme-accent-text-color);
+}
