@@ -193,13 +193,13 @@ const onSubmit = () => {
     message: "Используя данный сервис, вы соглашаетесь с пользовательским соглашением.",
     buttons: [
       {
-        text: "Ознакомиться",
-        id: "view_terms",
-      },
-      {
         text: "Согласен",
         id: "accept",
         type: "default",
+      },
+      {
+        text: "Ознакомиться",
+        id: "view_terms",
       },
       {
         type: "cancel",
