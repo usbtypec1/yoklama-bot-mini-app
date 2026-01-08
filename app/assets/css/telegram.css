@@ -16,6 +16,7 @@
 
 .tg-accent-outline-color {
     border-color: var(--tg-theme-accent-text-color);
+    color: var(--tg-theme-text-color);
 }
 
 .tg-accent-outline-color::placeholder {
