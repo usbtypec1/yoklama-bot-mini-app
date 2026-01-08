@@ -25,3 +25,11 @@
 .tg-destructive-outline-color {
     border-color: var(--tg-theme-destructive-text-color);
 }
+
+.tg-hint-color {
+    color: var(--tg-theme-hint-color);
+}
+
+.tg-accent-text-color {
+    color: var(--tg-theme-accent-text-color);
+}

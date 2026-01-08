@@ -3,14 +3,14 @@ import { MainButton, SecondaryButton } from "vue-tg";
 </script>
 <template>
   <div
-      class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4"
+      class="min-h-screen tg-secondary-bg-color flex items-center justify-center p-4"
   >
     <div
-        class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-3xl animate-fade-in"
+        class="tg-section-bg-color rounded-2xl shadow-2xl p-8 w-full max-w-3xl animate-fade-in"
     >
       <!-- Header -->
       <div class="text-center mb-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-2">
+        <h1 class="text-3xl font-bold tg-text-color mb-2">
           Пользовательское соглашение
         </h1>
         <p class="text-gray-600">
@@ -19,7 +19,7 @@ import { MainButton, SecondaryButton } from "vue-tg";
       </div>
 
       <!-- Content -->
-      <div class="space-y-5 text-gray-700 leading-relaxed text-sm md:text-base">
+      <div class="space-y-5 tg-hint-color leading-relaxed text-sm md:text-base">
         <p>
           Используя данный сервис, пользователь подтверждает своё добровольное
           согласие на предоставление и обработку своих учетных данных системы
@@ -55,7 +55,7 @@ import { MainButton, SecondaryButton } from "vue-tg";
             <a
                 href="https://obistest.manas.edu.kg/vs-ders/taken-lessons"
                 target="_blank"
-                class="text-purple-600 hover:underline break-all"
+                class="tg-accent-text-color break-all"
             >
               https://obistest.manas.edu.kg/vs-ders/taken-lessons
             </a>
@@ -64,7 +64,7 @@ import { MainButton, SecondaryButton } from "vue-tg";
             <a
                 href="https://obistest.manas.edu.kg/vs-ders/taken-grades"
                 target="_blank"
-                class="text-purple-600 hover:underline break-all"
+                class="tg-accent-text-color break-all"
             >
               https://obistest.manas.edu.kg/vs-ders/taken-grades
             </a>
@@ -82,20 +82,20 @@ import { MainButton, SecondaryButton } from "vue-tg";
           <a
               href="https://github.com/usbtypec1/yoklama-bot"
               target="_blank"
-              class="text-purple-600 hover:underline break-all"
+              class="tg-accent-text-color break-all"
           >
             https://github.com/usbtypec1/yoklama-bot
           </a>
         </p>
 
-        <p class="font-medium text-gray-800">
+        <p class="font-medium tg-subtitle-text-color">
           Продолжая использование сервиса, пользователь подтверждает,
           что ознакомился с условиями, понимает их и полностью принимает.
         </p>
       </div>
 
       <!-- Footer -->
-      <div class="mt-10 text-center text-xs text-gray-400">
+      <div class="mt-10 text-center text-xs tg-hint-color">
         © {{ new Date().getFullYear() }} manas_yoklama_bot
       </div>
     </div>
