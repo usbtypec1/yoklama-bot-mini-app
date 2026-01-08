@@ -1,9 +1,9 @@
 <template>
   <div
-      class="min-h-screen secondary-bg-color flex items-start justify-center p-4"
+      class="min-h-screen tg-secondary-bg-color flex items-start justify-center p-4"
   >
     <div
-        class="section-bg-color rounded-2xl shadow-2xl p-8 w-full max-w-md overflow-hidden"
+        class="tg-section-bg-color rounded-2xl shadow-2xl p-8 w-full max-w-md overflow-hidden"
     >
       <Transition name="fade-slide" mode="out-in">
         <div :key="state" class="relative min-h-[400px]">
@@ -11,20 +11,20 @@
           <!-- FORM -->
           <div v-if="state === 'form'" class="absolute inset-0 flex flex-col justify-center">
             <div class="text-center mb-8">
-              <h1 class="text-3xl font-bold text-color mb-2">
+              <h1 class="text-3xl font-bold tg-text-color mb-2">
                 Вход в Yoklama Bot
               </h1>
-              <p class="subtitle-text-color">Введите данные от OBIS</p>
+              <p class="tg-subtitle-text-color">Введите данные от OBIS</p>
             </div>
 
             <!-- Error -->
             <div
                 v-if="errorMessage"
-                class="mb-2 p-4 bg-red-50 border destructive-outline-color rounded-lg animate-shake"
+                class="mb-2 p-4 bg-red-50 border tg-destructive-outline-color rounded-lg animate-shake"
             >
               <div class="flex items-center">
                 <svg
-                    class="w-5 h-5 destructive-text-color mr-2"
+                    class="w-5 h-5 tg-destructive-text-color mr-2"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                 >
@@ -34,7 +34,7 @@
                       clip-rule="evenodd"
                   />
                 </svg>
-                <span class="destructive-text-color text-sm">
+                <span class="tg-destructive-text-color text-sm">
                   {{ errorMessage }}
                 </span>
               </div>
@@ -42,13 +42,13 @@
 
             <!-- Student number -->
             <div class="mb-4">
-              <label class="block text-sm font-medium text-color mb-2">
+              <label class="block text-sm font-medium tg-text-color mb-2">
                 Студенческий номер
               </label>
               <input
                   v-model="studentNumber"
                   type="text"
-                  class="w-full px-4 py-3 border rounded-lg accent-outline-color"
+                  class="w-full px-4 py-3 border rounded-lg tg-accent-outline-color"
                   placeholder="2204.01001"
                   @keyup.enter="onSubmit"
               />
@@ -56,12 +56,12 @@
 
             <!-- Password -->
             <div class="mb-6">
-              <label class="block text-sm font-medium text-color mb-2">
+              <label class="block text-sm font-medium tg-text-color mb-2">
                 Пароль от OBIS
               </label>
               <input
                   v-model="password"
-                  class="w-full px-4 py-3 border rounded-lg accent-outline-color"
+                  class="w-full px-4 py-3 border rounded-lg tg-accent-outline-color"
                   placeholder="yes_future123!"
                   @keyup.enter="onSubmit"
               />
@@ -83,7 +83,7 @@
                   class="w-20 h-20 border-8 border-purple-500 rounded-full animate-spin border-t-transparent absolute inset-0"
               ></div>
             </div>
-            <p class="mt-6 text-color font-medium">
+            <p class="mt-6 tg-text-color font-medium">
               Проверка введенных данных...
             </p>
           </div>
@@ -111,12 +111,12 @@
               </svg>
             </div>
 
-            <h2 class="mt-6 text-2xl font-bold text-center text-color">
+            <h2 class="mt-6 text-2xl font-bold text-center tg-text-color">
               Добро пожаловать!
               <br>
               {{ fullName }}
             </h2>
-            <p class="mt-2 subtitle-text-color text-center">
+            <p class="mt-2 tg-subtitle-text-color text-center">
               Через пару секунд вы автоматически будете перенаправлены в бота.
             </p>
           </div>
@@ -128,9 +128,8 @@
 </template>
 
 <script setup lang="ts">
-import { MainButton, usePopup, useMiniApp, useHapticFeedback, useTheme } from "vue-tg";
+import { MainButton, usePopup, useMiniApp, useHapticFeedback } from "vue-tg";
 
-const { themeParams } = useTheme();
 const { showPopup } = usePopup();
 const { sendData } = useMiniApp();
 const { notificationOccurred, impactOccurred } = useHapticFeedback();
@@ -285,31 +284,4 @@ const onSubmit = () => {
   animation: checkDraw 0.5s ease-out 0.3s forwards;
 }
 
-.text-color {
-  color: var(--tg-theme-text-color);
-}
-
-.subtitle-text-color {
-  color: var(--tg-theme-subtitle-text-color);
-}
-
-.section-bg-color {
-  background-color: var(--tg-theme-section-bg-color);
-}
-
-.secondary-bg-color {
-  background-color: var(--tg-theme-secondary-bg-color);
-}
-
-.accent-outline-color {
-  border-color: var(--tg-theme-accent-text-color);
-}
-
-.destructive-text-color {
-  color: var(--tg-theme-destructive-text-color);
-}
-
-.destructive-outline-color {
-  border-color: var(--tg-theme-destructive-text-color);
-}
 </style>

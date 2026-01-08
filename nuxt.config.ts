@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  css: ['./app/assets/css/main.css'],
+  css: ['./app/assets/css/main.css', './app/assets/css/telegram.css'],
   app: {
     head: {
       script: [{ src: 'https://telegram.org/js/telegram-web-app.js' }],

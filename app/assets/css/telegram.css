@@ -1,0 +1,27 @@
+.tg-text-color {
+    color: var(--tg-theme-text-color);
+}
+
+.tg-subtitle-text-color {
+    color: var(--tg-theme-subtitle-text-color);
+}
+
+.tg-section-bg-color {
+    background-color: var(--tg-theme-section-bg-color);
+}
+
+.tg-secondary-bg-color {
+    background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.tg-accent-outline-color {
+    border-color: var(--tg-theme-accent-text-color);
+}
+
+.tg-destructive-text-color {
+    color: var(--tg-theme-destructive-text-color);
+}
+
+.tg-destructive-outline-color {
+    border-color: var(--tg-theme-destructive-text-color);
+}
