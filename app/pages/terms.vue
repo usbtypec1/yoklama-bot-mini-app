@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MainButton, SecondaryButton } from "vue-tg";
+import { MainButton } from "vue-tg";
 </script>
 <template>
   <div
@@ -13,13 +13,13 @@ import { MainButton, SecondaryButton } from "vue-tg";
         <h1 class="text-3xl font-bold tg-text-color mb-2">
           Пользовательское соглашение
         </h1>
-        <p class="text-gray-600">
+        <p class="tg-hint-color">
           @manas_yoklama_bot
         </p>
       </div>
 
       <!-- Content -->
-      <div class="space-y-5 tg-hint-color leading-relaxed text-sm md:text-base">
+      <div class="space-y-5 tg-text-color leading-relaxed text-sm md:text-base">
         <p>
           Используя данный сервис, пользователь подтверждает своё добровольное
           согласие на предоставление и обработку своих учетных данных системы
@@ -50,12 +50,12 @@ import { MainButton, SecondaryButton } from "vue-tg";
           и исключительно со следующих веб-страниц системы OBIS:
         </p>
 
-        <ul class="list-disc list-inside pl-2 text-gray-800">
+        <ul class="list-disc list-inside pl-2 tg-accent-text-color">
           <li>
             <a
                 href="https://obistest.manas.edu.kg/vs-ders/taken-lessons"
                 target="_blank"
-                class="tg-accent-text-color break-all"
+                class="break-all"
             >
               https://obistest.manas.edu.kg/vs-ders/taken-lessons
             </a>
@@ -64,7 +64,7 @@ import { MainButton, SecondaryButton } from "vue-tg";
             <a
                 href="https://obistest.manas.edu.kg/vs-ders/taken-grades"
                 target="_blank"
-                class="tg-accent-text-color break-all"
+                class="break-all"
             >
               https://obistest.manas.edu.kg/vs-ders/taken-grades
             </a>

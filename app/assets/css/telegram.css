@@ -18,6 +18,10 @@
     border-color: var(--tg-theme-accent-text-color);
 }
 
+.tg-accent-outline-color::placeholder {
+    color: var(--tg-theme-hint-color);
+}
+
 .tg-destructive-text-color {
     color: var(--tg-theme-destructive-text-color);
 }
