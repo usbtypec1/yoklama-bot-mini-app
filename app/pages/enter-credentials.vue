@@ -1,9 +1,9 @@
 <template>
   <div
-      class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-start justify-center p-4"
+      class="min-h-screen secondary-bg-color flex items-start justify-center p-4"
   >
     <div
-        class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md overflow-hidden"
+        class="section-bg-color rounded-2xl shadow-2xl p-8 w-full max-w-md overflow-hidden"
     >
       <Transition name="fade-slide" mode="out-in">
         <div :key="state" class="relative min-h-[400px]">
@@ -11,10 +11,10 @@
           <!-- FORM -->
           <div v-if="state === 'form'" class="absolute inset-0 flex flex-col justify-center">
             <div class="text-center mb-8">
-              <h1 class="text-3xl font-bold text-gray-800 mb-2">
+              <h1 class="text-3xl font-bold text-color mb-2">
                 Вход в Yoklama Bot
               </h1>
-              <p class="text-gray-600">Введите данные от OBIS</p>
+              <p class="subtitle-text-color">Введите данные от OBIS</p>
             </div>
 
             <!-- Error -->
@@ -42,7 +42,7 @@
 
             <!-- Student number -->
             <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700 mb-2">
+              <label class="block text-sm font-medium text-color mb-2">
                 Студенческий номер
               </label>
               <input
@@ -56,7 +56,7 @@
 
             <!-- Password -->
             <div class="mb-6">
-              <label class="block text-sm font-medium text-gray-700 mb-2">
+              <label class="block text-sm font-medium text-color mb-2">
                 Пароль от OBIS
               </label>
               <input
@@ -128,8 +128,9 @@
 </template>
 
 <script setup lang="ts">
-import { MainButton, usePopup, useMiniApp, useHapticFeedback } from "vue-tg";
+import { MainButton, usePopup, useMiniApp, useHapticFeedback, useTheme } from "vue-tg";
 
+const { themeParams } = useTheme();
 const { showPopup } = usePopup();
 const { sendData } = useMiniApp();
 const { notificationOccurred, impactOccurred } = useHapticFeedback();
@@ -282,5 +283,21 @@ const onSubmit = () => {
 
 .animate-check-draw {
   animation: checkDraw 0.5s ease-out 0.3s forwards;
+}
+
+.text-color {
+  color: var(--tg-theme-text-color);
+}
+
+.subtitle-text-color {
+  color: var(--tg-theme-subtitle-text-color);
+}
+
+.section-bg-color {
+  background-color: var(--tg-theme-section-bg-color);
+}
+
+.secondary-bg-color {
+  background-color: var(--tg-theme-secondary-bg-color);
 }
 </style>
