@@ -44,5 +44,5 @@
 }
 
 .tg-loading-indicator-secondary-color {
-    border-color: var(--tg-theme-secondary-bg-color);
+    border-color: var(--tg-theme-section-bg-color);
 }
