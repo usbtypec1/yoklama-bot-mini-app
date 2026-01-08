@@ -42,7 +42,3 @@
 .tg-loading-indicator-primary-color {
     border-color: var(--tg-theme-button-color);
 }
-
-.tg-loading-indicator-secondary-color {
-    border-color: var(--tg-theme-section-bg-color);
-}

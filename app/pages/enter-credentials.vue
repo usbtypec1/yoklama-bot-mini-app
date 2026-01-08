@@ -75,14 +75,9 @@
               v-else-if="state === 'loading'"
               class="absolute inset-0 flex flex-col items-center justify-center"
           >
-            <div class="relative">
-              <div
-                  class="w-20 h-20 border-8 tg-loading-indicator-secondary-color rounded-full"
-              ></div>
-              <div
-                  class="w-20 h-20 border-8 tg-loading-indicator-primary-color rounded-full animate-spin border-t-transparent absolute inset-0"
-              ></div>
-            </div>
+            <div
+                class="w-20 h-20 border-8 tg-loading-indicator-primary-color rounded-full"
+            ></div>
             <p class="mt-6 tg-text-color font-medium">
               Проверка введенных данных...
             </p>
