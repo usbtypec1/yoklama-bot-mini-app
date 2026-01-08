@@ -10,7 +10,7 @@
 
           <!-- FORM -->
           <div v-if="state === 'form'" class="absolute inset-0 flex flex-col justify-center">
-            <div class="text-center mb-8">
+            <div class="text-center mb-6">
               <h1 class="text-3xl font-bold tg-text-color mb-2">
                 Вход в Yoklama Bot
               </h1>
